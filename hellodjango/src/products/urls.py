@@ -10,8 +10,9 @@ from products.views import (
     ProductRedirectView,
     ProtectedProductDetailView,
     ProtectedProductCreateView, 
-    ProtectedProductUpdateView, # New import
-    ProtectedProductDeleteView # New import
+    ProtectedProductUpdateView, 
+    ProtectedProductDeleteView,
+    ProtectedListView,  # <---- Añado el import de la vista protegida
     )
 
 urlpatterns = [
@@ -26,9 +27,10 @@ urlpatterns = [
     path("p/<int:pk>/", ProductIDRedirectView.as_view()), 
     path("p/<slug:slug>/", ProductRedirectView.as_view()), 
 
-    path("my-products/create/", ProtectedProductCreateView.as_view()), # elemos la vista de creación 
+    path("my-products/", ProtectedListView.as_view()), # <---- Añado la url de la vista protegida
+    path("my-products/create/", ProtectedProductCreateView.as_view()),  
     path("my-products/<slug:slug>/", ProtectedProductDetailView.as_view()),
-    path("my-products/<slug:slug>/edit/", ProtectedProductUpdateView.as_view()),  # < -- New URL pattern
-    path("my-products/<slug:slug>/delete/", ProtectedProductDeleteView.as_view()),  # < -- New URL pattern
-    
+    path("my-products/<slug:slug>/edit/", ProtectedProductUpdateView.as_view()),  
+    path("my-products/<slug:slug>/delete/", ProtectedProductDeleteView.as_view()),  
 ]
+

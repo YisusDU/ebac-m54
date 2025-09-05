@@ -13,8 +13,11 @@ El objetivo de esta actividad es que crees el ListView basado en clases protegid
 
 * Crea una nueva clase llamada ProtectedListView.
 * Recuerda hacer que esta clase herede del Mixin LoginRequiredMixin.
+* 
 * Agrega esta vista a los urls en el endpoint path ”my-products”.
+* 
 * Recuerda sobreescribir el método “get_queryset” para que aparezcan solo los productos del usuario que hace el request.
+* 
 * Añade el código de tu proyecto de Github con el nombre “Django Class-based Views”.
 * En un archivo de Word pon el link a tu repositorio y copia y pega el código que creaste en VSCode.
 

@@ -5,8 +5,8 @@ from django.views.generic import (
     DetailView, 
     RedirectView,
     CreateView,
-    UpdateView, # New import
-    DeleteView, # New import
+    UpdateView, 
+    DeleteView, 
     ) 
 from django.shortcuts import render, get_object_or_404 
 
@@ -14,23 +14,30 @@ from .forms import ProductModelForm
 from .mixins import TemplateTitleMixin
 from .models import Product, DigitalProduct
 
-class ProtectedProductUpdateView(LoginRequiredMixin,UpdateView): # < -- New View
+class ProtectedListView(TemplateTitleMixin,LoginRequiredMixin, ListView): #<---- Añado la vista protegida
+    template_name = "products/product_list.html"
+    title = "Mis productos"
+
+    def get_queryset(self):
+        return Product.objects.filter(user=self.request.user)
+
+class ProtectedProductUpdateView(LoginRequiredMixin,UpdateView): 
     form_class = ProductModelForm
     template_name = "products/product_detail.html"
 
     def get_queryset(self):
-        return Product.objects.filter(user=self.request.user) # El usuario solo puede editar sus propios productos
+        return Product.objects.filter(user=self.request.user) 
     
     def get_success_url(self):
         return self.object.get_edit_url()
     
-class ProtectedProductDeleteView(LoginRequiredMixin,DeleteView): # < -- New View
+class ProtectedProductDeleteView(LoginRequiredMixin,DeleteView): 
     template_name = "forms-delete.html"
 
     def get_queryset(self):
-        return Product.objects.filter(user=self.request.user) # El usuario solo puede eliminar sus propios productos
+        return Product.objects.filter(user=self.request.user) 
     
-    def get_success_url(self): # Redirige a la lista de productos después de eliminar
+    def get_success_url(self): 
         return "/products/products/"
 
 class ProtectedProductCreateView(LoginRequiredMixin,CreateView): 
