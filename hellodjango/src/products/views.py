@@ -16,7 +16,7 @@ from .models import Product, DigitalProduct
 
 class ProtectedListView(TemplateTitleMixin,LoginRequiredMixin, ListView): #<---- Añado la vista protegida
     template_name = "products/product_list.html"
-    title = "Mis productos"
+    title = "Mis productos" # <---- Título personalizado
 
     def get_queryset(self):
         return Product.objects.filter(user=self.request.user)
