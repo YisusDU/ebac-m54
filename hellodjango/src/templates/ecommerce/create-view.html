@@ -1,0 +1,11 @@
+{% include "ecommerce/messages.html" %}
+
+<h1>
+    Crear nuevo producto
+</h1>
+
+<form method="POST" action="" > 
+    {% csrf_token %} <!-- token de seguridad -->
+    {{ form.as_p }} <!-- as_p es para separar y que no venga todo en una línea -->
+    <input type="submit" value="Crear">
+</form>

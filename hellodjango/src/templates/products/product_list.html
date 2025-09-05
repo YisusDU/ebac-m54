@@ -1,0 +1,10 @@
+{% if title %} <!-- Añadimos esta validación al titulo -->
+    <h1>
+        {{ title }}
+    </h1>
+{% endif %}
+
+<!-- Añdimos el id de cada producto -->
+{% for object in object_list %}
+    <li>{{ object.pk }} -- {{object.title}} -- {{ object.slug }}</li>
+{% endfor %}

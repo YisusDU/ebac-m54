@@ -1,0 +1,72 @@
+[
+{
+    "model": "ecommerce.productmodel",
+    "pk": 1,
+    "fields": {
+        "state": "DR",
+        "timestamp": "2025-08-25T23:51:53.997Z",
+        "update": "2025-08-25T23:51:53.997Z",
+        "publish_timestamp": null,
+        "title": "Producto slug",
+        "price": 199.99,
+        "description": null,
+        "slug": "producto-slug"
+    }
+},
+{
+    "model": "ecommerce.productmodel",
+    "pk": 2,
+    "fields": {
+        "state": "DR",
+        "timestamp": "2025-08-25T23:53:39.028Z",
+        "update": "2025-08-25T23:53:39.028Z",
+        "publish_timestamp": null,
+        "title": "Producto slug",
+        "price": 199.99,
+        "description": null,
+        "slug": "producto-slug - 1"
+    }
+},
+{
+    "model": "ecommerce.productmodel",
+    "pk": 3,
+    "fields": {
+        "state": "DR",
+        "timestamp": "2025-08-25T23:55:10.153Z",
+        "update": "2025-08-25T23:55:10.153Z",
+        "publish_timestamp": null,
+        "title": "Producto slug",
+        "price": 199.99,
+        "description": null,
+        "slug": "producto-slug - 2"
+    }
+},
+{
+    "model": "ecommerce.productmodel",
+    "pk": 4,
+    "fields": {
+        "state": "DR",
+        "timestamp": "2025-08-25T23:55:50.281Z",
+        "update": "2025-08-25T23:55:50.281Z",
+        "publish_timestamp": null,
+        "title": "Producto slug",
+        "price": 199.99,
+        "description": null,
+        "slug": "producto-slug-3"
+    }
+},
+{
+    "model": "ecommerce.productmodel",
+    "pk": 5,
+    "fields": {
+        "state": "DR",
+        "timestamp": "2025-08-25T23:55:55.917Z",
+        "update": "2025-08-25T23:55:55.917Z",
+        "publish_timestamp": null,
+        "title": "Producto slug",
+        "price": 199.99,
+        "description": null,
+        "slug": "producto-slug-4"
+    }
+}
+]

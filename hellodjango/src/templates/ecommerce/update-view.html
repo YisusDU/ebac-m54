@@ -1,0 +1,12 @@
+<h1>
+    Actualizacion de producto {{ form.instance.title }}
+</h1>
+
+{{ form.instance.title }}
+
+
+<form method="POST" action="" > 
+    {% csrf_token %} <!-- token de seguridad -->
+    {{ form.as_p }} <!-- as_p es para separar y que no venga todo en una línea -->
+    <input type="submit" value="Actualizar">
+</form>
